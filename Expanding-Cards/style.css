@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+.p1 {
+    background-image:url(img/london.jpg);
+}
+.p2 {
+    background-image:url(img/paris.jpg);
+}
+.p3 {
+    background-image:url(img/egypt.jpg);
+}
+.p4 {
+    background-image:url(img/rome.jpg);
+}
+.p5 {
+    background-image:url(img/race.jpg);
+}
+.container {
+    display: flex;
+    width: 90vw;
+}
+.pannel {
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 40px;
+    color: aliceblue;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 6px;
+    position: relative;
+    transition: 0.6s ease-in;
+}
+.pannel h3 {
+    position: absolute;
+    left: 5%;
+    bottom: 1.4%;
+    opacity: 0; 
+    transition: opacity 0.2s ease-in 0.3s; /*delai*/
+}
+.pannel.active {
+    flex: 5;
+}
+.pannel.active h3 {
+    opacity: 1;
+}
+@media (max-width :480px) {
+    .container {
+        width: 100vw;
+    }
+    .pannel:nth-last-of-type(1),.pannel:nth-last-of-type(2) {
+        display: none;
+    }
+}

@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Press Start 2p';
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+    background-color: #516dff;
+    color: #fff;
+}
+a {
+    color: #fff;
+}
+h1 {
+    line-height: 1.4;
+}
+.btn {
+    border: 0;
+    background-color: #fff;
+    color: #516dff;
+    padding: 15px 20px;
+    font-family: inherit;
+    cursor: pointer;
+}
+.btn:hover {
+    opacity: 0.9;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    height: 100vh;
+    width: 100vw;
+    transition: margin 0.5s ease-out;
+    margin: 0;
+}
+.screen.up {
+    margin-top: -100vh;
+}
+.vehicules-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+.vehicules-list li {
+    margin: 10px;
+}
+.choose-vehicule-btn {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    font-family: inherit;
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+}
+.choose-vehicule-btn:hover {
+    background-color: #fff;
+    color: #516dff;
+}
+.choose-vehicule-btn:active {
+    background-color: rgba(255,255,255,0.7);
+}
+.choose-vehicule-btn img {
+    width: 100px;
+    object-fit: contain;
+    height: 100px;
+}
+
+.game-container {
+    position: relative;
+}
+#time , #score, #record {
+    position: absolute;
+    top: 20px;
+}
+@media(max-width:900px) {
+    #record{
+        top: 35px;
+        font-size: 11px;
+    }
+    #time , #score{
+        font-size: 15px;
+        top: 12px;
+        margin: 0px;
+    }
+}
+#record {
+    background-color: #3a50bf;
+    padding: 0.6rem 1.2rem;
+    border: 2px solid #fff;
+}
+
+#time{
+    left: 20px;
+}
+#score{
+    right: 20px;
+}
+#message {
+    font-size: 24px;
+    line-height: 1.7;
+    background-color: rgba(0,0,0,0.4);
+    width: 100%;
+    padding: 20px;
+    z-index: 1;
+    text-align: center;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-150%);
+    transition: transform 0.4s ease-in
+}
+
+#message.visible {
+    opacity: 1;
+    transform: translate(-50%,+150%);
+}
+.vehicule{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 400px;
+    left: 300px;
+    transform: translate(-50%,-50%) scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+.vehicule.caught {
+    transform: translate(-50%,-50%) scale(0);
+}
+.vehicule img {
+    width: 100px;
+    height: 100px;
+}
